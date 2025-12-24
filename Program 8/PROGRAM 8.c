@@ -1,18 +1,15 @@
 #include<stdio.h>
 #include <stdlib.h>
-
 struct node {
     int data;
     struct node *left, *right;
 };
-
 struct node* createNode(int value) {
     struct node* newNode = (struct node*)malloc(sizeof(struct node));
     newNode->data = value;
     newNode->left = newNode->right = NULL;
     return newNode;
 }
-
 struct node* insert(struct node* root, int value) {
     if (root == NULL)
         return createNode(value);
@@ -24,8 +21,6 @@ struct node* insert(struct node* root, int value) {
 
     return root;
 }
-
-// Inorder Traversal
 void inorder(struct node* root) {
     if (root != NULL) {
         inorder(root->left);
@@ -33,8 +28,6 @@ void inorder(struct node* root) {
         inorder(root->right);
     }
 }
-
-// Preorder Traversal
 void preorder(struct node* root) {
     if (root != NULL) {
         printf("%d ", root->data);
@@ -42,8 +35,6 @@ void preorder(struct node* root) {
         preorder(root->right);
     }
 }
-
-// Postorder Traversal
 void postorder(struct node* root) {
     if (root != NULL) {
         postorder(root->left);
@@ -51,18 +42,15 @@ void postorder(struct node* root) {
         printf("%d ", root->data);
     }
 }
-
-// Separate function to display elements in the tree
 void display(struct node* root) {
     printf("\nElements in the Tree (Inorder Display): ");
     inorder(root);
     printf("\n");
 }
-
 int main() {
     struct node* root = NULL;
     int n, value;
-
+    printf("Name: BHUMIKA U \n USN: 1BM24CS073");
     printf("Enter number of nodes to insert: ");
     scanf("%d", &n);
 
@@ -81,8 +69,8 @@ int main() {
     printf("\nPost-Order Traversal: ");
     postorder(root);
 
-    // Display function
     display(root);
 
     return 0;
 }
+
