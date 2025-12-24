@@ -1,13 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-
-// Node structure
 struct Node {
     int data;
     struct Node* next;
 };
-
-// Function to create a new node with given value
 struct Node* createNode(int value) {
     struct Node* newNode = (struct Node*) malloc(sizeof(struct Node));
     if (!newNode) {
@@ -18,8 +14,6 @@ struct Node* createNode(int value) {
     newNode->next = NULL;
     return newNode;
 }
-
-// Create list by adding nodes at the end (called repeatedly)
 void createList(struct Node** head) {
     int n, value;
     printf("How many nodes do you want to create? ");
@@ -31,29 +25,22 @@ void createList(struct Node** head) {
         insertAtEnd(head, value);
     }
 }
-
-// Insert node at beginning
 void insertAtBeginning(struct Node** head, int value) {
     struct Node* newNode = createNode(value);
     newNode->next = *head;
     *head = newNode;
 }
-
-// Insert node at any given position (1-based index)
 void insertAtPosition(struct Node** head, int value, int position) {
     if (position < 1) {
         printf("Invalid position!\n");
         return;
     }
-
     if (position == 1) {
         insertAtBeginning(head, value);
         return;
     }
-
     struct Node* newNode = createNode(value);
     struct Node* temp = *head;
-
     for (int i = 1; i < position - 1; i++) {
         if (temp == NULL) {
             printf("Position is beyond the length of the list.\n");
@@ -62,39 +49,31 @@ void insertAtPosition(struct Node** head, int value, int position) {
         }
         temp = temp->next;
     }
-
     if (temp == NULL) {
         printf("Position is beyond the length of the list.\n");
         free(newNode);
         return;
     }
-
     newNode->next = temp->next;
     temp->next = newNode;
 }
-
-// Insert node at end
 void insertAtEnd(struct Node** head, int value) {
     struct Node* newNode = createNode(value);
     if (*head == NULL) {
         *head = newNode;
         return;
     }
-
     struct Node* temp = *head;
     while (temp->next != NULL)
         temp = temp->next;
 
     temp->next = newNode;
 }
-
-// Display linked list
 void displayList(struct Node* head) {
     if (head == NULL) {
         printf("List is empty.\n");
         return;
     }
-
     struct Node* temp = head;
     printf("Linked List: ");
     while (temp != NULL) {
@@ -103,13 +82,10 @@ void displayList(struct Node* head) {
     }
     printf("NULL\n");
 }
-
-// Main function with menu-driven program
 int main() {
     struct Node* head = NULL;
     int choice, value, position;
-
-    printf("NAME: BHUMIKA SHRINIVAS TELI \nUSN: 1BM24CS072\n");
+    printf("NAME: BHUMIKA U \nUSN: 1BM24CS073\n");
     while (1) {
         printf("\nMenu:\n");
         printf("1. Create Linked List\n");
@@ -120,7 +96,6 @@ int main() {
         printf("6. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
-
         switch(choice) {
             case 1:
                 createList(&head);
@@ -152,6 +127,6 @@ int main() {
                 printf("Invalid choice! Try again.\n");
         }
     }
-
     return 0;
 }
+
