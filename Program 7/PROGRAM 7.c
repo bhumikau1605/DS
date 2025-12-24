@@ -101,6 +101,7 @@ void display()
 void main()
 {
     int ch, key, val;
+    printf("Name: BHUMIKA U \n USN: 1BM24CS073\n");
     printf("--MENU-- \n 1. Insert at end\n 2. Insert to the left of a node\n 3. Search\n 4. Delete a node based on a specific key value\n 5. Display the list\n 6. Exit\n");
     while(1)
     {
@@ -140,3 +141,4 @@ void main()
         }
     }
 }
+
