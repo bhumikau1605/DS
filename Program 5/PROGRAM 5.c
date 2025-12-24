@@ -1,11 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 struct node {
     int data;
     struct node* next;
 } *head = NULL;
-
 int count() {
     struct node* temp = head;
     int i = 0;
@@ -15,7 +13,6 @@ int count() {
     }
     return i;
 }
-
 struct node* create(int value) {
     struct node* temp = (struct node*)malloc(sizeof(struct node));
     if (temp == NULL) {
@@ -26,7 +23,6 @@ struct node* create(int value) {
     temp->next = NULL;
     return temp;
 }
-
 void insert_begin(int value) {
     struct node* newnode = create(value);
     if (head == NULL) {
@@ -36,7 +32,6 @@ void insert_begin(int value) {
         head = newnode;
     }
 }
-
 void delete_begin() {
     struct node* temp;
     if (head == NULL) {
@@ -48,16 +43,13 @@ void delete_begin() {
         printf("Deleted node from beginning.\n");
     }
 }
-
 void delete_end() {
     struct node* temp1;
     struct node* temp2;
-
     if (head == NULL) {
         printf("Deletion is not possible. List is empty.\n");
         return;
     }
-
     if (head->next == NULL) {
         // Only one node
         free(head);
@@ -65,7 +57,6 @@ void delete_end() {
         printf("Deleted node from end.\n");
         return;
     }
-
     temp1 = head;
     while (temp1->next != NULL) {
         temp2 = temp1;
@@ -75,23 +66,19 @@ void delete_end() {
     free(temp1);
     printf("Deleted node from end.\n");
 }
-
 void delete_pos(int pos) {
     struct node* temp1;
     struct node* temp2;
     int i = 1;
     int length = count();
-
     if (pos < 1 || pos > length) {
         printf("Deletion not possible. Position out of range.\n");
         return;
     }
-
     if (pos == 1) {
         delete_begin();
         return;
     }
-
     temp1 = head;
     while (i < pos) {
         temp2 = temp1;
@@ -102,41 +89,31 @@ void delete_pos(int pos) {
     free(temp1);
     printf("Deleted node at position %d.\n", pos);
 }
-
 void delete_spec_value(int key) {
     struct node* temp1 = head;
     struct node* temp2 = NULL;
-
     if (head == NULL) {
         printf("List is empty. Cannot delete.\n");
         return;
     }
-
-    // If head holds the key
     if (temp1 != NULL && temp1->data == key) {
         head = temp1->next;
         free(temp1);
         printf("Element %d deleted.\n", key);
         return;
     }
-
-    // Search for the key
     while (temp1 != NULL && temp1->data != key) {
         temp2 = temp1;
         temp1 = temp1->next;
     }
-
     if (temp1 == NULL) {
         printf("Element %d not found in the list.\n", key);
         return;
     }
-
-    // Unlink and delete
     temp2->next = temp1->next;
     free(temp1);
     printf("Element %d deleted.\n", key);
 }
-
 void display() {
     struct node* temp = head;
     if (head == NULL) {
@@ -151,10 +128,9 @@ void display() {
     }
     printf("\n");
 }
-
 int main() {
     int ch, pos, value, key;
-  printf("NAME: BHUMIKA SHRINIVAS TELI \nUSN: 1BM24CS072\n");
+  printf("NAME: BHUMIKA U \nUSN: 1BM24CS073\n");
     do {
         printf("\nMenu:\n");
         printf("1. Insert at Beginning\n");
@@ -166,7 +142,6 @@ int main() {
         printf("7. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &ch);
-
         switch (ch) {
             case 1:
                 printf("Enter the value: ");
@@ -199,6 +174,6 @@ int main() {
                 printf("Invalid choice! Try again.\n");
         }
     } while (ch != 7);
-
     return 0;
 }
+
