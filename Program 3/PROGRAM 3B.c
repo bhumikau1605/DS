@@ -58,7 +58,7 @@ void display() {
 
 int main() {
     int choice, value;
-    printf("NAME: BHUMIKA SHRINIVAS TELI \nUSN: 1BM24CS072\n");
+    printf("NAME: BHUMIKA U \nUSN: 1BM24CS073\n");
     while (1) {
         printf("\nMenu:\n1. Enqueue\n2. Dequeue\n3. Display\n4. Exit\nEnter choice: ");
         scanf("%d", &choice);
@@ -82,3 +82,4 @@ int main() {
         }
     }
 }
+
