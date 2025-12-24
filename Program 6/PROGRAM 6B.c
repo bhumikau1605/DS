@@ -129,7 +129,7 @@ void display_queue()
 int main()
 {
     int opt,val,del,p;
-    printf("NAME: BHUMIKA SHRINIVAS TELI \nUSN: 1BM24CS072\n");
+    printf("NAME: BHUMIKA U \nUSN: 1BM24CS073\n");
     printf("\n WAP TO IMPLEMENT STACK AND QUEUE USING LINKED LIST\n");
     printf("--MENU-- \n 1. Push an element\n 2. Pop an element \n 3.Peek an element from the stack\n 4. Display the stack\n 5. Enqueue an element\n 6. Dequeue an element\n 7.Peek an element \n 8. Display the queue\n 9.Exit\n ");
     while(1)
@@ -179,3 +179,4 @@ int main()
     }
     return 0;
 }
+
