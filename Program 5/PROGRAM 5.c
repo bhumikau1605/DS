@@ -51,7 +51,6 @@ void delete_end() {
         return;
     }
     if (head->next == NULL) {
-        // Only one node
         free(head);
         head = NULL;
         printf("Deleted node from end.\n");
@@ -176,4 +175,5 @@ int main() {
     } while (ch != 7);
     return 0;
 }
+
 
